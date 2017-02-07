@@ -1,6 +1,9 @@
-# igmmgp
+# Bayesian Modelling of Functional Whole Brain Connectivity
 
-<code>
+Sampling based mixture modeling software tools. Gibbs sampler and split-merge / SAMS proposals for sampling clustering configuration. Metropolis-Hastings sampling of hyperparameters. 
+
+We generate a small dataset that is used in the clustering with S subjects consisting of N observations of dimension T in K clusters.
+```matlab
 K=10;
 N=100;
 T=20;
@@ -17,10 +20,16 @@ for s=1:S
     x{s}(:,z==k)=bsxfun(@plus,muk(:,k,s),randn(T,sum(z==k),1));
   end;
 end
-</code>
-
-<code>
+```
+We can use the infinite spherical Gaussian Mixture model to cluster the generated dataset by the following code snippet:
+```matlab
 z_init=randi(K,N,1);
 m=igmmsmodel(x,z_init);
 infsample(x,m);
-</code>
+```
+
+List of probabilistic models: 
+* Spherical Gaussian mixture model.
+* Diagonal matrix Gaussian mixture model.
+* Gaussian mixture model with Gaussian process prior on cluster means.
+* von-Mises Fisher mixture model.
