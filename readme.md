@@ -33,3 +33,9 @@ List of probabilistic models:
 * Diagonal matrix Gaussian mixture model.
 * Gaussian mixture model with Gaussian process prior on cluster means.
 * von-Mises Fisher mixture model.
+
+Two papers using this code will hopefully get published and may be referenced as: 
+
+Roege, R. E., Madsen, K. H., Schmidt, M. N., Moerup, M. (Dec. 2016) Infinite von Mises-Fisher Modeling of Whole-Brain fMRI Data, Submitted.
+
+Roege, R. E., Schmidt, M. N., Churchill, N. W., Madsen, K. H., Moerup, M. (Feb. 2017) Functional Whole-Brain Parcellation using Bayesian Non-Parametric Modeling, Manuscript.
