@@ -1,6 +1,6 @@
-# Bayesian Modelling of Functional Whole Brain Connectivity
+# Sampling based mixture modeling in Matlab
 
-Sampling based mixture modeling software tools. Gibbs sampler and split-merge / SAMS proposals for sampling clustering configuration. Metropolis-Hastings sampling of hyperparameters. 
+Sampling based mixture modeling software tool. Gibbs sampler and split-merge / SAMS proposals for sampling clustering configuration. Metropolis-Hastings sampling of hyperparameters. 
 
 We generate a small dataset that is used in the clustering with S subjects consisting of N observations of dimension T in K clusters.
 ```matlab
