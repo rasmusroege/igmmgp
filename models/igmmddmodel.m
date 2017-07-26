@@ -175,15 +175,6 @@ classdef igmmddmodel<AbsGMMdd_sh & AbsInfiniteModel & handle
                     nk=[obj.par.nk;0]';
                     lam=obj.par.sub(l).lambda;
                     mu0=obj.par.sub(l).mu0;
-%                     for k=1:K+1
-%                         if k<=K
-%                             obj.ss(l).R2t(:,k)=r0+0.5*sav(:,k)+0.5*s.xt2-0.5/(nk(k)+1+lam)*(xav(:,k)+s.xt+lam*mu0).^2;
-%                             
-%                         else
-%                             obj.ss(l).R2t(:,k)=s.R0+0.5*s.xt2-0.5/(1+lam)*(s.xt+lam*mu0).^2;
-%                         end
-%                         
-%                     end
                     obj.ss(l).R2t=bsxfun(@plus,r0+1/2*s.xt2,1/2*sav)+bsxfun(@times,-0.5./(nk+1+lam),bsxfun(@plus,xav,s.xt+lam*mu0).^2);
                     nn=([obj.par.nk;0]'+1)/2+obj.par.sub(l).v0;
                     logPnew(:,l)=obj.ss(l).logPrior-(sum(bsxfun(@times,nn,log(obj.ss(l).R2t)))-obj.par.T*gammaln(nn)-obj.par.T/2*log(lam./(([obj.par.nk'+1 1])+lam)));

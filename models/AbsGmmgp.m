@@ -274,7 +274,6 @@ classdef AbsGmmgp<handle
             z=obj.par.z;
             stepsize_w2=0.1;
             stepsize_sig2=0.1;
-            
             for j=1:maxiter
                 s=obj.ss;
                 sub=obj.par.sub;

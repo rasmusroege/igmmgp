@@ -65,9 +65,9 @@ classdef AbsVMF < handle
         
         function samples=samplefromprior(obj,a,b,M,x0)
             T=obj.par.T;
-            nburnin=20;
-            stepsize=0.2;
-            trimming=10;
+            nburnin=200;
+            stepsize=0.05;
+            trimming=50;
             for i=1:nburnin
                 x=exp(log(x0)+stepsize*randn);
                 if rand<exp(obj.logprior(T,x,a,b)-obj.logprior(T,x0,a,b))
@@ -75,7 +75,7 @@ classdef AbsVMF < handle
                 end
             end
             x0=x;
-            stepsize=0.1;
+            stepsize=0.05;
             samples=zeros(M,1);
             for i=1:M
                 for j=1:trimming

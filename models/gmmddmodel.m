@@ -134,12 +134,6 @@ classdef gmmddmodel<AbsGMMdd_sh & AbsFiniteModel & handle
             K=obj.par.K;
             logPnew = zeros(K,obj.par.nsubjects);
             for l=1:obj.par.nsubjects
-                %                 s=obj.ss(l);
-                %                 lam=obj.par.sub(l).lambda;
-                %                 mu0=obj.par.sub(l).mu0;
-                %                 for k=1:K
-                %                     obj.ss(l).R2t(:,k)=obj.ss(l).R0+0.5*obj.ss(l).Sigma_avg(:,k)+0.5*s.xt2-0.5/(obj.par.nk(k)+1+obj.par.sub(l).lambda)*(obj.ss(l).x_avg(:,k)+s.xt+obj.par.sub(l).lambda*obj.par.sub(l).mu0).^2;
-                %                 end
                 s=obj.ss(l);
                 sav=[obj.ss(l).Sigma_avg];
                 xav=[obj.ss(l).x_avg];
